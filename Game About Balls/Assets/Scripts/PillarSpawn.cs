@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PillarSpawns : MonoBehaviour
+public class PillarSpawn : MonoBehaviour
 {
 
     private Vector3 randomY;
