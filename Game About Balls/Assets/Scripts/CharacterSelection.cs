@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
+    public AudioSource selectSound;
 
     void Start()
     {
@@ -33,8 +34,9 @@ public class CharacterSelection : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-             RaycastHit2D hit = Physics2D.Raycast(this.transform.position, -Vector2.up);
-             Debug.Log(hit.transform.name);
+            selectSound.Play();
+            RaycastHit2D hit = Physics2D.Raycast(this.transform.position, -Vector2.up);
+            if (hit.collider != null) Debug.Log(hit.transform.name);
         }
     }
 }
