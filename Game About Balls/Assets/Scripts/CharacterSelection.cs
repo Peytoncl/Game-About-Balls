@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class CharacterSelection : MonoBehaviour
     void Update()
     {
         checkInput();
-        checkDone();
+        StartCoroutine("checkDone");
     }
 
     void checkInput()
@@ -30,7 +31,7 @@ public class CharacterSelection : MonoBehaviour
         }
     }
 
-    void checkDone()
+    IEnumerator checkDone()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -38,6 +39,8 @@ public class CharacterSelection : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(this.transform.position, -Vector2.up);
             if (hit.collider != null) Debug.Log(hit.transform.name);
             PlayerPrefs.SetString("Player", hit.transform.name);
+            yield return new WaitForSeconds(1);
+            SceneManager.LoadScene("Game");
         }
     }
 }

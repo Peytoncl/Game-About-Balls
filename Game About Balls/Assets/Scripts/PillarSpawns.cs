@@ -26,17 +26,17 @@ public class PillarSpawns : MonoBehaviour
 
     void randomSpawn()
     {
-        randomY = new Vector3(4, Random.Range(-3, -1));
+        randomY = new Vector3(5, Random.Range(-3, -1));
         //bottom pipe
         Instantiate(pillarTop, randomY, Quaternion.identity);
-        Instantiate(pillarBottom, new Vector3(4, randomY.y - 2.5520937f), Quaternion.identity);
-        Instantiate(pillarBottom, new Vector3(4, randomY.y - 2.5520937f * 2), Quaternion.identity);
-        Instantiate(pillarBottom, new Vector3(4, randomY.y - 2.5520937f * 3), Quaternion.identity);
+        Instantiate(pillarBottom, new Vector3(5, randomY.y - 2.5520937f), Quaternion.identity);
+        Instantiate(pillarBottom, new Vector3(5, randomY.y - 2.5520937f * 2), Quaternion.identity);
+        Instantiate(pillarBottom, new Vector3(5, randomY.y - 2.5520937f * 3), Quaternion.identity);
         //top pipe
-        if(randomY.y >= -3) topPipeY = new Vector3(4, randomY.y * -1.5f);
-        if(randomY.y < -3) topPipeY = new Vector3(4, randomY.y * -2);
+        if(randomY.y >= -3) topPipeY = new Vector3(5, randomY.y * -1.5f);
+        if(randomY.y < -3) topPipeY = new Vector3(5, randomY.y * -2);
         Instantiate(pillarTop_UpsideDown, topPipeY, Quaternion.identity);
-        Instantiate(pillarBottom_UpsideDown, new Vector3(4, topPipeY.y + 2.5520937f), Quaternion.identity);
-        Instantiate(pillarBottom_UpsideDown, new Vector3(4, topPipeY.y + 2.5520937f * 2), Quaternion.identity);
+        Instantiate(pillarBottom_UpsideDown, new Vector3(5, topPipeY.y + 2.5520937f), Quaternion.identity);
+        Instantiate(pillarBottom_UpsideDown, new Vector3(5, topPipeY.y + 2.5520937f * 2), Quaternion.identity);
     }
 }
