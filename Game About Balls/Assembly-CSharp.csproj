@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterSelection.cs" />
+     <Compile Include="Assets\Scripts\PillarSpawns.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/wubzy/Documents/Unity Projects/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

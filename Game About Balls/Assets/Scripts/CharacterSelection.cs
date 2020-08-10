@@ -8,7 +8,7 @@ public class CharacterSelection : MonoBehaviour
 
     void Start()
     {
-        
+        PlayerPrefs.SetString("Player", null);
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class CharacterSelection : MonoBehaviour
             selectSound.Play();
             RaycastHit2D hit = Physics2D.Raycast(this.transform.position, -Vector2.up);
             if (hit.collider != null) Debug.Log(hit.transform.name);
+            PlayerPrefs.SetString("Player", hit.transform.name);
         }
     }
 }
